@@ -9,12 +9,15 @@ void  main(void)
 {
      pid_t  pid;
      int    i;
+     //holder to put sstrings in
      char   buf[BUF_SIZE];
+     //char whatami[15];
 
      pid = fork();
 
      for (i = 1; i <= MAX_COUNT; i++) {
-       if(pid > 0){
+       if(pid > 0){  // whatami == "parent";
+            // lowlevel syscall equivalent to printf
          sprintf(buf, "This line is from  the parent pid %d, value = %d\n", getpid(), i); 
        }
        
